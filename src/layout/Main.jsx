@@ -15,7 +15,7 @@ class Main extends Component {
     this.setState({ movies: [], loading: true });
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&s=${title}${typeSearch !== "all" ? `&type=${typeSearch}` : ""}`,
+        `https://www.omdbapi.com/?apikey=${API_KEY}&s=${title}${typeSearch !== "all" ? `&type=${typeSearch}` : ""}`,
       );
       const data = await response.json();
       this.setState({ movies: data.Search, loading: false });
@@ -27,7 +27,7 @@ class Main extends Component {
   async componentDidMount() {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&s=Avatar`,
+        `https://www.omdbapi.com/?apikey=${API_KEY}&s=Avatar`,
       );
       const data = await response.json();
       this.setState({ movies: data.Search, loading: false });
